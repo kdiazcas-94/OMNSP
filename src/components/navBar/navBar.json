@@ -1,0 +1,17 @@
+    
+{
+    "navBar2":[
+    {
+        "link": "/Products/",
+        "text": "Products"
+    },
+    {
+        "link": "/About-Us/",
+        "text": "About Us"
+    },
+    {
+        "link": "/Contact-Us/",
+        "text": "Contact Us"
+    }
+    ]
+}
