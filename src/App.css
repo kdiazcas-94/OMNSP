@@ -8,13 +8,6 @@
   a {
     text-decoration: none;
   }
-  
-  .google-map{
-    height: 50%;
-    width: 80%;
-    align-content: center;
-    padding: 20px 150px;
-  }
 
   .headerLogo {
     height: 10%;
@@ -22,6 +15,7 @@
     padding: 10px 50px
   }
 
+  /* Main Pages screen size */
   .header {
     background-color: #24292e ;
     min-height: 10vh;
@@ -55,12 +49,6 @@
     display: flex;
   }
 
-  .productDropDown{
-    color:black;
-    display: flex;
-    flex-direction: column;
-  }
-
   .aboutUs{
     height:600px;
     width: 100%;
@@ -71,6 +59,18 @@
     height:600px;
     width: 100%;
     background: beige;
+  }
+/* Main Pages screen size end */
+.google-map{
+  height: 50%;
+  width: 80%;
+  align-content: center;
+  padding: 20px 150px;
+}
+  .productDropDown{
+    color:black;
+    display: flex;
+    flex-direction: column;
   }
 
   .seperator{
@@ -86,14 +86,6 @@
   li {
     padding: 10px 0;
     color:white;
-  }
-
-  button {
-    font-size: 30px;
-    margin-right: 30px;
-    color: white;
-    cursor: pointer;
-    float: right;
   }
 
   /* Class */
@@ -137,22 +129,8 @@
   color:white;
   }
 
-  .highlightTrigger{
-  height: 0;
-  overflow: hidden;
-  list-style-type: none;
-  text-decoration:none;
-  color:red;
-  font-weight: 500;
-  }
-
   .navOptionsLink {
     color: white;
-  }
-
-  .show-nav {
-    height: 120px;
-    color:red;
   }
 
   /* Media screen size */
