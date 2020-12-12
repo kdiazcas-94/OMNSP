@@ -2,8 +2,8 @@
 {
     "navBar2":[
     {
-        "link": "/Products/",
-        "text": "Products"
+        "link": "/home/",
+        "text": "Home"
     },
     {
         "link": "/About-Us/",
@@ -12,6 +12,18 @@
     {
         "link": "/Contact-Us/",
         "text": "Contact Us"
+    },
+    {
+        "link": "/My-Groups/",
+        "text": "My Groups"
+    },
+    {
+        "link": "/My-Topics/",
+        "text": "My Topics"
+    },
+    {
+        "link": "/Profile-Page/",
+        "text": "My Profile"
     }
     ]
 }

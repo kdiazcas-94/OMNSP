@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavigationBar from '../navBar/NavigationBar'
-import Logo from '../logo/Logo'
+import LoginButton from '../login/loginButton'
 
 
 class Header extends Component {
@@ -8,7 +8,7 @@ class Header extends Component {
       return (
         <div className='header'>
             <NavigationBar />   
-            <Logo /> 
+            <LoginButton />
         </div>
       );
     }
