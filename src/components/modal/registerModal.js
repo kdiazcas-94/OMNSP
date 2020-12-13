@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-export default class LoginModal extends Component {
+export default class RegisterModal extends Component {
  
     render() {
         const { handleClose, desc, show, header, footer  } = this.props
@@ -16,16 +16,22 @@ export default class LoginModal extends Component {
                 </div>
                 <div className="modal-body">
                     <p>
-                      <form action ="/login" method="POST">
+                    <h1> Signup form </h1> 
+                      <form action ="/register" method="POST">
+                      <input class="box" type="text" name="name" id="name" 
+                    placeholder="Name"  required />
                       <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                               <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
+                              <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
                                 <label class="sr-only" for="exampleInputPassword3">Password</label>
                                 <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
-                                <input class="form-check-input" type="checkbox"></input>
+                               
+                                <input class="box" type="text" name="phone" id="phone"  
+                    placeholder="Phone Number " required/>
                                     <label class="form-check-label"> Remember me
                                     </label>
                                     <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>    
+                                    <input type="submit" id="submitDetails"  
+                    name="submitDetails" value="Submit" />  
                       </form>
                       </p> 
                      </div>
