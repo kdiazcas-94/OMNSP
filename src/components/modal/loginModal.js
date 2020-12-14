@@ -14,6 +14,23 @@ export default class LoginModal extends Component {
       event.preventDefault();
       console.log('User signed in!');
     }
+
+submitLogin ()  {
+    fetch("localhost:3003/submitLogin", {
+      body: "email=test@example.com&password=pw",
+      headers: {
+          
+      },
+      method: "post",
+  })
+  .then((response) => {
+      
+  })
+  .catch(err => {
+    // handle error
+  })
+}
+
     render() {
         const { handleClose, desc, show, header, footer  } = this.props
         const showHideClassName = show ? 'display-block' : 'display-none';
