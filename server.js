@@ -47,7 +47,9 @@ app.listen(PORT, ()=>{
     res.sendFile(__dirname + "/src/components/modal/registerModal.js");
   });
 
-
+  app.get('/src/components/modal/loginButton.js',(req,res) =>{
+    res.sendFile(__dirname + "/src/components/modal/registerModal.js");
+  });
  
 
 //OMNSP\src\components\login\registerButton.js
@@ -83,7 +85,7 @@ app.post("/login", (req,res,next)=> {
     {
 
         
-        return res.redirect('/secret.html');
+        return res.redirect('http://localhost:3000/Profile-Page');
     }
 });
   
