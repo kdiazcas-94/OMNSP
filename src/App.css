@@ -3,8 +3,6 @@
     min-height: 100vh;
     background-color: #24292e;
     display: block;
-    margin-left: auto;
-    margin-right: auto
   }
   .container {
     text-align: center;
@@ -184,6 +182,11 @@
   height: auto;
   max-width: 100%;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-left: 80px;
+  /*hard coded center*/
 }
 
 .gallery {
@@ -214,7 +217,7 @@
 
 .profileWrapper {
   padding:40px;
-  border-width: 10px;
+  border-width: 8px;
   border-style: solid;
   flex: auto;
   color: white
