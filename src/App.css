@@ -1,17 +1,36 @@
+  body,
+  html {
+    min-height: 100vh;
+    background-color: #24292e;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
   .container {
     text-align: center;
-    height: calc(100% - 60px);
+    padding-bottom: 2.5rem;
+    
   }
 
   a {
     text-decoration: none;
+    font-size: 35px;
+    font-family: sans-serif;
+    text-align: center;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50px;
   }
   
-  .loginButton {
+ /* .loginButton {
 
-  }
+  }        Reserved
   .registerButton {
-  }
+
+  } */
   
   .loginButtonField {
     padding: 10px
@@ -23,8 +42,8 @@
 
   /* Main Pages screen size */
   .header {
-    background-color: #24292e ;
-    min-height: 10vh;
+    background-color: #1b1e22 ;
+    min-height: 2vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,53 +54,10 @@
   }
 
   .footer {
-    position:absolute;
-    left:0;
-    bottom:0;
-    right:0;
-    height:60px;  
-    background: #24292e ;
-  }
-
-  .homepage{
-    height:100%;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    background: rgba(12, 12, 11, 0.548);
-  }
-
-  .products{
-    height:600px;
-    width: 100%;
-    background: beige;
-    display: flex;
-  }
-
-  .aboutUs{
-    height:600px;
-    width: 100%;
-    background: beige;
-  }
-
-  .contactUs{
-    height:600px;
-    width: 100%;
-    background: beige;
-  }
-
-  .profilePage{
-    height:600px ;
-    width: 100%;
-    background: beige;
-  }
-  .myGroups{
-    height:600px ;
-    width: 100%;
-    background: beige;
-  }
-  .myTopics{
-    height:600px ;
-    width: 100%;
-    background: beige;
+    height: 2.5rem;
   }
 
 /* Main Pages screen size end */
@@ -91,28 +67,8 @@
   align-content: center;
   padding: 20px 150px;
 }
-  .productDropDown{
-    color:black;
-    display: flex;
-    flex-direction: column;
-  }
 
-  .seperator{
-    height: 100%;
-    width: 5%;
-  }
-
-  .productContainer{
-    height: 100%;
-    width: 75%
-  }
-
-  li {
-    padding: 10px 0;
-    color:white;
-  }
-
-  /* Class */
+/* Class */
   .navBar {
     padding: 0 40px;
     width: 100%;
@@ -122,36 +78,13 @@
     font-size: x-large;
   }
 
-  .navButton{
-    vertical-align:middle;
-    padding: 0 40px;
-    color: white;
-  }
-
-  .navButton:hover {
-    background-color: lightblue;
-  }
-
-  .navOptions {
-    height: 100%;
-    width: 20%;
-    text-decoration: none;
-    list-style: none;
-    color: Black;
-  }
-
-  .dropLink {
-    text-decoration: none;
-    list-style: none;
-  }
-
   .links {
-  height: 0;
-  overflow: hidden;
-  list-style-type: none;
-  text-decoration:none;
-  color:white;
-  }
+    height: 0;
+    overflow: hidden;
+    list-style-type: none;
+    text-decoration:none;
+    color:white;
+    }
 
   .navOptionsLink {
     color: white;
@@ -226,15 +159,17 @@
  
 .modal-header {
     padding: 2px 16px;
-    background-color: #451b04;
+    background-color: #1f2329;
     color: white;
 }
  
-.modal-body {padding: 20px 16px;}
+.modal-body {
+  padding: 20px 16px;
+  background-color: #2e343a;}
  
 .modal-footer {
     padding: 2px 16px;
-    background-color: #451b04;
+    background-color: #1f2329;
     color: white;
 }
 .display-block {
@@ -243,4 +178,49 @@
  
 .display-none {
   display: none;
+}
+
+.homeWrapper {
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.gallery {
+  /* Prevent vertical gaps */
+  width: 95%;
+  margin: 5px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+.bigPic{
+  height: auto;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.75)
+  
+}
+.bigPic2{
+  height: auto;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.2)
+}
+
+.profileWrapper {
+  padding:40px;
+  border-width: 10px;
+  border-style: solid;
+  flex: auto;
+  color: white
+}
+
+@media screen and (max-width: 960px) {
+  .parent {width: 100%; margin: 20px 0px}
+  .wrapper {padding: 20px 20px;}
 }

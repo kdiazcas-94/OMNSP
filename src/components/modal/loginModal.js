@@ -33,15 +33,17 @@ export default class LoginModal extends Component {
                 <div className="modal-body">
                     <p>
                       <form action="http://localhost:3003/login" method="POST">
-                      <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                               <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email" onChange={this.myChangeHandler}></input>
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
-                                <input className="form-check-input" type="checkbox"></input>
-                                    <label className="form-check-label"> Remember me
-                                    </label>
-                                    <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button onClick="submitLogin" value="Submit">Sign in</button>    
+                      <label className="sr-only" for="exampleInputEmail3">Email address</label>
+                        <input type="email" className="formSize" id="exampleInputEmail3" placeholder="Enter email" onChange={this.myChangeHandler}></input>
+                        <br></br>
+                        <label className="sr-only" for="exampleInputPassword3">Password</label>
+                        <input type="password" className="formSize" id="exampleInputPassword3" placeholder="Password"></input>
+                        <br></br>
+                        <input className="form-check-input" type="checkbox"></input>
+                        <label className="form-check-label"> Remember me</label>
+                        <br></br>
+                        <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                        <button onClick="submitLogin" value="Submit">Sign in</button>    
                       </form>
                       </p> 
                      </div>

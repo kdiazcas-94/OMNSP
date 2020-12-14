@@ -9,7 +9,7 @@ import Homepage from './pages/homepage/HomePage'
 import ErrorComp from './pages/errorcomp/ErrorComp'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Products from './pages/products/Products'
+//import Products from './pages/products/Products'
 import AboutUs from './pages/aboutUs/AboutUs.'
 import ContactUs from './pages/contactUs/ContactUs'
 import profilePage from "./pages/profile/profilePage"
@@ -24,7 +24,7 @@ class App extends Component {
               <Header />
                 <Switch>
                   <Route exact path='/' component={Homepage}/>
-                  <Route exact path='/home' component={Products}/>
+                  <Route exact path='/home' component={Homepage}/>
                   <Route exact path='/About-Us' component={AboutUs}/>
                   <Route exact path='/Contact-Us' component={ContactUs}/>
                   <Route exact path='/Profile-Page' component={profilePage}/>

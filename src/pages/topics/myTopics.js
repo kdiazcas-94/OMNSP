@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class myTopics extends Component {
     render(){
       return (
-        <div className='myTopics'>
+        <div className='body'>
             Shows user group pages
         </div>
       );

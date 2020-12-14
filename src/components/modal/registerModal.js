@@ -31,22 +31,22 @@ export default class RegisterModal extends Component {
                   <h2>{header}</h2>
                 </div>
                 <div className="modal-body">
-                    <p>
-                    <h1> Signup form </h1> 
                       <form action="http://localhost:3003/submitRegister" method="POST">
-                      <input className="box" type="text" name="name" id="name"  placeholder="Name"  required />
+                      <label className="sr-only" for="exampleInputName">Name</label>
+                        <input className="box" type="text" name="name" id="name"  placeholder="Name"  required />
+                          <br></br>
                       <label className="sr-only" for="exampleInputEmail3">Email address</label>
-                              <input type="email" name="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
-                                <label className="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" name="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
-                               
-                                <input className="box" type="text" name="phone" id="phone"   placeholder="Phone Number " required/>
-                                    <label className="form-check-label"> Remember me
-                                    </label>
-                                    <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                                    <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />
+                        <input type="email" name="email" className="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
+                          <br></br>
+                      <label className="sr-only" for="exampleInputPassword3">Password</label>
+                        <input type="password" name="password" className="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
+                          <br></br>
+                      <label className="sr-only" for="exampleInputPhoneNumber">Phone Number</label>
+                      <input className="box" type="text" name="phone" id="phone"   placeholder="Phone Number " required/>
+                      <br></br>
+                      <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                      <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />
                       </form>
-                      </p> 
                      </div>
                      <div className="modal-footer"><h3>{footer}</h3>
                      </div>               

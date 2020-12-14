@@ -3,7 +3,7 @@ import GoogleMap from './googleMap/GoogleMap';
 class ContactUs extends Component {
     render(){
       return (
-        <div className='contactUs'>
+        <div className='body'>
           <br></br>
           (931) 239-2777 <br></br>
           1411 Gibbons Rd, <br>
