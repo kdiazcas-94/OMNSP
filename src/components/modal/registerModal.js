@@ -1,6 +1,22 @@
 import React, { Component }  from 'react';
 export default class RegisterModal extends Component {
  
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+      handleChange(event){
+        this.setState({value: event.target.value});
+      }
+      handleSubmit(event){
+        alert('A name was submitted' + this.state.value);
+        event.preventDefault();
+        console.log('User registered to DB!');
+      }
+
+
     render() {
         const { handleClose, desc, show, header, footer  } = this.props
         const showHideClassName = show ? 'display-block' : 'display-none';
@@ -17,21 +33,18 @@ export default class RegisterModal extends Component {
                 <div className="modal-body">
                     <p>
                     <h1> Signup form </h1> 
-                      <form action ="/register" method="POST">
-                      <input class="box" type="text" name="name" id="name" 
-                    placeholder="Name"  required />
+                      <form action="http://localhost:3003/submitRegister" method="POST">
+                      <input class="box" type="text" name="name" id="name"  placeholder="Name"  required />
                       <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                              <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
+                              <input type="email" name="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
                                 <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
+                                <input type="password" name="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
                                
-                                <input class="box" type="text" name="phone" id="phone"  
-                    placeholder="Phone Number " required/>
+                                <input class="box" type="text" name="phone" id="phone"   placeholder="Phone Number " required/>
                                     <label class="form-check-label"> Remember me
                                     </label>
                                     <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                                    <input type="submit" id="submitDetails"  
-                    name="submitDetails" value="Submit" />  
+                                    <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />
                       </form>
                       </p> 
                      </div>

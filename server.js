@@ -1,25 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const morgan = require('morgan')
-/*const bodyParser = require('body-parser')
- Might use this for express-session tokens
-passport = require("passport"), 
-   
-    LocalStrategy = require("passport-local").Strategy
-    passportLocalMongoose =  
-        require("passport-local-mongoose"), 
-   
-// must hash the password using bcrypt, to secure your users!
-mongoose.set('useNewUrlParser', true); 
-mongoose.set('useFindAndModify', false); 
-mongoose.set('useCreateIndex', true); 
-mongoose.set('useUnifiedTopology', true);
-const EmployeeRoute = require('./routes/employee')
-const AuthRoute = require('./routes/auth')
-const router = require('./routes/employee')
+var bodyParser = require('body-parser');
+const cors = require("cors");
 
-const { data } = require('jquery')*/
-mongoose.connect('mongodb://localhost:27017/auth_demoapp2', {useNewUrlParser:true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost:27017/auth_demoapp', {useNewUrlParser:true, useUnifiedTopology: true})
 const db = mongoose.connection
 
 
@@ -33,15 +17,21 @@ db.once('open', () => {
 
 const app = express()
 
+var corsOptions = {
+    origin: "http://localhost:3000"
+};
 
 
 
-app.use(morgan('dev'))
+//app.use(morgan('dev'))
+app.use(cors(corsOptions));
+
+app.use(bodyParser.urlencoded({
+    extended: true
+ }));
 
 
-
-
-const PORT= process.env.PORT || 3000
+const PORT= process.env.PORT || 3003
 
 app.listen(PORT, ()=>{
     console.log('server is now running on port ${PORT}')
@@ -53,13 +43,16 @@ app.listen(PORT, ()=>{
 
 
 
-  app.get('/src/components/login/registerButton.js',(req,res) =>{
-    res.sendFile(__dirname + "/src/components/login/registerButton.js");
+  app.get('/src/components/modal/registerButton.js',(req,res) =>{
+    res.sendFile(__dirname + "/src/components/modal/registerModal.js");
   });
+
+
+ 
 
 //OMNSP\src\components\login\registerButton.js
    //below is code to signup a user into mongoDB/mongoose 
-   app.post('/register', function(req,res){ 
+   app.post('/submitRegister', function(req,res){ 
     var name = req.body.name; 
     var email =req.body.email; 
     var pass = req.body.password; 
@@ -80,7 +73,7 @@ db.collection('users').insertOne(data,function(err, collection){
     }); 
  
           
-   return res.redirect('/secret.html'); 
+   return res.redirect('http://localhost:3000/'); 
 });
   
 
@@ -97,6 +90,8 @@ app.get("/logout", function (req, res) {
     req.logout(); 
     res.redirect("/"); 
 }); 
+
+
   
 
 

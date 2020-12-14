@@ -1,6 +1,19 @@
 import React, { Component }  from 'react';
 export default class LoginModal extends Component {
- 
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(event){
+      this.setState({value: event.target.value});
+    }
+    handleSubmit(event){
+      alert('A name was submitted' + this.state.value);
+      event.preventDefault();
+      console.log('User signed in!');
+    }
     render() {
         const { handleClose, desc, show, header, footer  } = this.props
         const showHideClassName = show ? 'display-block' : 'display-none';
@@ -16,7 +29,7 @@ export default class LoginModal extends Component {
                 </div>
                 <div className="modal-body">
                     <p>
-                      <form action ="/login" method="POST">
+                      <form>
                       <label class="sr-only" for="exampleInputEmail3">Email address</label>
                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
                                 <label class="sr-only" for="exampleInputPassword3">Password</label>
@@ -25,7 +38,7 @@ export default class LoginModal extends Component {
                                     <label class="form-check-label"> Remember me
                                     </label>
                                     <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>    
+                            <button onClick="submitLogin" value="Submit">Sign in</button>    
                       </form>
                       </p> 
                      </div>
