@@ -48,7 +48,7 @@ app.listen(PORT, ()=>{
   });
 
   app.get('/src/components/modal/loginButton.js',(req,res) =>{
-    res.sendFile(__dirname + "/src/components/modal/registerModal.js");
+    res.sendFile(__dirname + "/src/components/modal/loginModal.js");
   });
  
 
