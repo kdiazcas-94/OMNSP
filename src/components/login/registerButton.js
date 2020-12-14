@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '../modal/registerModal';
-
+import {Button} from '@material-ui/core'
 
 
 class RegisterButton extends React.Component {
@@ -8,11 +8,9 @@ class RegisterButton extends React.Component {
       super(props);
       this.state = {
       show: false,
-      header: "I am Header",
-      footer: "I am Footer",
-      desc: "This is a Body"
+      header: "Register",
+      footer: "Welcome to MenteeBook"
      };
-
   }
  
   showModal = () => {
@@ -25,11 +23,11 @@ class RegisterButton extends React.Component {
 
   render() {
     return (
-      <div>
-        <button type="button" onClick={this.showModal}>
+      <div className="registerButtonField">
+        <Button className="registerButton" variant="contained"  color="primary" onClick={this.showModal}>
           Click to Register your account!
-        </button>
-        <Modal show={this.state.show} handleClose={this.hideModal} header={this.state.header} footer={this.state.footer} desc={this.state.desc} />
+        </Button>
+        <Modal show={this.state.show} handleClose={this.hideModal} header={this.state.header} footer={this.state.footer} />
       </div>
     );
   }

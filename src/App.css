@@ -1,24 +1,24 @@
   .container {
     text-align: center;
-    min-height:100%;
-    position:relative;
-    width: 100%
+    height: calc(100% - 60px);
   }
 
   a {
     text-decoration: none;
   }
+  
+  .loginButton {
 
-  .headerLogo {
-    height: 10%;
-    width: 30%;
-    padding: 10px 50px
+  }
+  .registerButton {
+  }
+  
+  .loginButtonField {
+    padding: 10px
   }
 
-  .login {
-    height: 10%;
-    width: 30%;
-    padding: 10px 50px
+  .registerButtonField {
+    padding: 10px
   }
 
   /* Main Pages screen size */
@@ -36,16 +36,17 @@
 
   .footer {
     position:absolute;
-    bottom: 0px;
-    width:100%;
+    left:0;
+    bottom:0;
+    right:0;
     height:60px;  
     background: #24292e ;
   }
 
   .homepage{
-    height:600px ;
+    height:100%;
     width: 100%;
-    background: beige;
+    background: rgba(12, 12, 11, 0.548);
   }
 
   .products{

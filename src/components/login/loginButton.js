@@ -1,18 +1,15 @@
 import React from 'react';
 import Modal from '../modal/loginModal';
-
-
+import {Button} from '@material-ui/core'
 
 class LoginButton extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
       show: false,
-      header: "I am Header",
-      footer: "I am Footer",
-      desc: "This is a Body"
+      header: "Login",
+      footer: "Welcome Back"
      };
-
   }
  
   showModal = () => {
@@ -25,11 +22,12 @@ class LoginButton extends React.Component {
 
   render() {
     return (
-      <div>
-        <button type="button" onClick={this.showModal}>
+      <div className="loginButtonField">
+        <Button className="loginButton" variant="contained" color="primary" onClick={this.showModal} >     
           Click to Login
-        </button>
-        <Modal show={this.state.show} handleClose={this.hideModal} header={this.state.header} footer={this.state.footer} desc={this.state.desc} />
+        </Button>
+        <Modal show={this.state.show} handleClose={this.hideModal} header={this.state.header} footer={this.state.footer} />
+        
       </div>
     );
   }
