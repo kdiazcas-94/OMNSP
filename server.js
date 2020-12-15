@@ -117,7 +117,7 @@ app.post('/login', function(req,res){
                   error: new Error('Incorrect password!')
                 });
               }
-              req.session.user=user
+              
               const token = jwt.sign(
                 { userId: user._id },
                 'RANDOM_TOKEN_SECRET',
