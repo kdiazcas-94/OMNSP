@@ -6,7 +6,6 @@ const cors = require("cors");
 mongoose.connect('mongodb://localhost:27017/auth_demoapp', {useNewUrlParser:true, useUnifiedTopology: true})
 const db = mongoose.connection
 
-
 db.on('error', (err) => {
     console.log(err)
 })
@@ -20,8 +19,6 @@ const app = express()
 var corsOptions = {
     origin: "http://localhost:3000"
 };
-
-
 
 //app.use(morgan('dev'))
 app.use(cors(corsOptions));
@@ -39,10 +36,6 @@ app.listen(PORT, ()=>{
 
 //ROUTES to implement pages/scripts/images/components from another folder, utilize syntax to the left and below
 
-
-
-
-
   app.get('/src/components/modal/registerButton.js',(req,res) =>{
     res.sendFile(__dirname + "/src/components/modal/registerModal.js");
   });
@@ -51,7 +44,6 @@ app.listen(PORT, ()=>{
     res.sendFile(__dirname + "/src/components/modal/registerModal.js");
   });
  
-
 //OMNSP\src\components\login\registerButton.js
    //below is code to signup a user into mongoDB/mongoose 
    app.post('/submitRegister', function(req,res){ 
@@ -59,7 +51,6 @@ app.listen(PORT, ()=>{
     var email =req.body.email; 
     var pass = req.body.password; 
     var phone =req.body.phone; 
-  
   
     var data = { //this data is a JSON for a user
         "name": name, 
@@ -73,11 +64,9 @@ db.collection('users').insertOne(data,function(err, collection){
         console.log("Record inserted Successfully"); 
               
     }); 
- 
           
    return res.redirect('http://localhost:3000/'); 
 });
-  
 
 //Handling user login 
 app.post("/login", (req,res,next)=> { 

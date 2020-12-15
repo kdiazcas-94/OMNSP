@@ -35,13 +35,13 @@ export default class LoginModal extends Component {
                       <form action="http://localhost:3003/login" method="POST">
                       <label className="sr-only" for="exampleInputEmail3">Email address</label>
                         <input type="email" className="formSize" id="exampleInputEmail3" placeholder="Enter email" onChange={this.myChangeHandler}></input>
-                        <br></br>
+                        <hr />
                         <label className="sr-only" for="exampleInputPassword3">Password</label>
                         <input type="password" className="formSize" id="exampleInputPassword3" placeholder="Password"></input>
-                        <br></br>
+                        <hr />
                         <input className="form-check-input" type="checkbox"></input>
                         <label className="form-check-label"> Remember me</label>
-                        <br></br>
+                        <hr />
                         <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
                         <button onClick="submitLogin" value="Submit">Sign in</button>    
                       </form>

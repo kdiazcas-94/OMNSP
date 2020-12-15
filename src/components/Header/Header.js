@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavigationBar from '../navBar/NavigationBar'
+import NavigationBar from './navBar/NavigationBar'
 import LoginButton from '../login/loginButton'
 import RegisterButton from '../login/registerButton'
 

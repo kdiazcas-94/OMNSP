@@ -19,7 +19,7 @@ import myTopics from "./pages/topics/myTopics"
 class App extends Component {
   render(){
     return (
-      <div className= 'container'>
+      <div className= 'containerMain'>
             <BrowserRouter>
               <Header />
                 <Switch>

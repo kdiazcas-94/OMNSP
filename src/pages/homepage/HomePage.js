@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import leep from './LEEP.jpg';
-import OMN from './OMN.jpg';
-import OMNSplashRotator from './OMNSplashRotator-6.png';
+import leep from '../../components/Images/LEEP.jpg';
+import OMN from '../../components/Images/OMN.jpg';
+import OMNSplashRotator from '../../components/Images/OMNSplashRotator-6.png';
 
 class HomePage extends Component {
     render(){

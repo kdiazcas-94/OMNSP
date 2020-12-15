@@ -3,8 +3,9 @@
     min-height: 100vh;
     background-color: #24292e;
     display: block;
+    justify-content: center;
   }
-  .container {
+  .containerMain {
     text-align: center;
     padding-bottom: 2.5rem;
     
@@ -40,7 +41,7 @@
 
   /* Main Pages screen size */
   .header {
-    background-color: #1b1e22 ;
+    background-color: #222b35 ;
     min-height: 2vh;
     display: flex;
     flex-direction: row;
@@ -179,7 +180,7 @@
 }
 
 .homeWrapper {
-  height: auto;
+  height: 600px;
   max-width: 100%;
   justify-content: center;
   margin-left: auto;
@@ -226,4 +227,152 @@
 @media screen and (max-width: 960px) {
   .parent {width: 100%; margin: 20px 0px}
   .wrapper {padding: 20px 20px;}
+}
+
+
+.banner{
+  background-color: #444e5c;
+  color: white;
+  text-align: center;
+  border-style: hidden;
+  border-radius: 15px;
+  font-family: 'Ruda', sans-serif;
+}
+
+#profilepic{
+    border-radius: 85px;
+    padding-top: 7px;
+}
+
+.about{
+    background-color:#444e5c;
+    color: white;
+    border-radius: 15px;
+    border-style: hidden;
+    padding: 18px; 
+    text-align: center;
+}
+
+.about>p{
+    font-family: 'Slabo 27px', serif;
+    font-size: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.about>h1{
+    font-family: 'Ruda', sans-serif;
+}
+
+.flex-project-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-project-container>div{
+    background-color: #444e5c;
+    width: 150px;
+    height: 150px;;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-style: hidden;
+    border-radius: 30px;
+}
+
+.flex-project-container img{
+    margin-top: 27px;
+}
+
+.flex-project-container > div:hover
+{
+transform: scale(1.1);
+
+}
+
+.projects{
+    background-color:#444e5c;
+    border-radius: 15px;
+    border-style: hidden;
+    padding: 18px; 
+    text-align: center;
+    
+}
+.projects h1{
+    font-family: 'Ruda', sans-serif;
+}
+
+.projects p{
+    font-family: 'Slabo 27px', serif;
+    font-size: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+    
+}
+
+
+.container a:hover
+{
+  
+transform: scale(1.1);
+}
+
+.container-1{
+    color: #f1f1f1;
+    text-align: center;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 16px;
+   
+     
+}
+
+#contactimg{
+    border-style: hidden;
+    background-color: #f1f1f1;
+    border-radius: 90px;
+    
+}
+
+.container-1 > a{
+    padding-left: 5px;
+    font-size: 22px;
+    text-decoration: none;    
+}
+
+
+#mail{
+    text-decoration: none;
+    color: white;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#mailmelogo{
+    border-style: hidden;
+    border-radius:5px;
+    width:15px;
+    height:15px;  
+}
+
+.skillHeader {
+  color: white;
+  background-color:#444e5c;
+  height: 60px;
+}
+
+.portfolioGallery {
+   width: 95%;
+  margin: 5px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
