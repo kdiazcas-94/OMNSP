@@ -1,8 +1,8 @@
 // importing modules 
 var mongoose = require('mongoose'); 
 var Schema = mongoose.Schema; 
-var passportLocalMongoose = require('passport-local-mongoose'); 
-  
+ 
+const uniqueValidator = require('mongoose-unique-validator');
   //add password here if needed
 var UserSchema = new Schema({    
     
@@ -15,7 +15,7 @@ var UserSchema = new Schema({
 }); 
   
 // plugin for passport-local-mongoose 
-UserSchema.plugin(passportLocalMongoose); 
+UserSchema.plugin(uniqueValidator); 
   
 // export userschema 
  module.exports = mongoose.model("User", UserSchema);

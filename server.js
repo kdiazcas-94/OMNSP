@@ -1,7 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const router = express.Router(); 
-
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy
 var bodyParser = require('body-parser');
@@ -58,61 +59,13 @@ app.listen(PORT, ()=>{
   const User = require('./model/user'); 
   
  
-passport.use(new LocalStrategy(User.authenticate())); 
-app.use(passport.initialize()); 
-app.use(passport.session()); 
 
-passport.serializeUser(User.serializeUser()); 
-passport.deserializeUser(User.deserializeUser());
+
+
  
 
 
 
-//OMNSP\src\components\login\registerButton.js
-   //below is code to signup a user into mongoDB/mongoose 
-   /*app.post('/submitRegister', function(req,res){ 
-    var name = req.body.name; 
-    var email =req.body.email; 
-    var pass = req.body.password; 
-    var phone =req.body.phone; 
-  
-  
-    var user = { //this data is a JSON for a user
-        "name": name, 
-        "email":email, 
-        "password":pass, 
-        "phone":phone 
-    } 
-    
-db.collection('users').insertOne(user,function(err, collection){ 
-        if (err) throw err; 
-        console.log("Record inserted Successfully"); 
-              
-    }); 
- 
-          
-   return res.redirect('http://localhost:3000/'); 
-});
-
-//db.collection('users').findOne({email: req.body., });
-  */
-
-//Handling user login 
-/*app.get("/login", (req,res,next)=> { 
-    if(req.body.email==db.collection('users').email && req.body.pass==db.collection('users').password)
-    {
-
-        console.log("success");
-         res.redirect('http://localhost:3000/Profile-Page');
-        
-    }
-    else if(req.body.email==db.collection('users').email && req.body.pass!=db.collection('users').password)
-    {
-        console.log("wrong password!!!");
-         alert("wrong password!");
-    }
-});
-  */
 
 
 
@@ -120,29 +73,81 @@ db.collection('users').insertOne(user,function(err, collection){
 
 
 app.post('/submitRegister', function(req, res) { 
-      
+   
+    bcrypt.hash(req.body.password, 10).then(
+        (hash) => {
+          const user = new User({
+            name: req.body.name,
+            email: req.body.email,
+            password: hash,
+            phone: req.body.phone
+
+          });
+          user.save().then(
+            () => {
+              res.status(201).json({
+                message: 'User added successfully!'
+              });
+            }
+          ).catch(
+            (error) => {
+              res.status(500).json({
+                error: error
+              });
+            }
+          );
+        }
+      );
     
-    Users=new User({name : req.body.name, 
-                    email: req.body.email, 
-                    password: req.body.password, 
-                    phone: req.body.phone}); 
-  //dont ask for password in above object, in order to validate password using passport?
-         db.collection('users').insertOne(Users, function(err, collection){
-             if(err) throw err
-             
-                 console.log("Account registered successfully!")
-             
-         });
+ 
          return res.redirect('http://localhost:3000/'); 
         
 });
 
 app.post('/login', function(req,res){
 
-    if(!req.body.username)
-    {
-        console.log("")
-    }
+    User.findOne({ email: req.body.email }).then(
+        (user) => {
+          if (!user) {
+            return res.status(401).json({
+              error: new Error('User not found!')
+            });
+          }
+          bcrypt.compare(req.body.password, user.password).then(
+            (valid) => {
+              if (!valid) {
+                return res.status(401).json({
+                  error: new Error('Incorrect password!')
+                });
+              }
+              
+              const token = jwt.sign(
+                { userId: user._id },
+                'RANDOM_TOKEN_SECRET',
+                { expiresIn: '24h' });
+                
+              res.status(200).json({
+                userId: user._id,
+                token: token
+              });
+            }
+          ).catch(
+            (error) => {
+              res.status(500).json({
+                error: error
+              });
+            }
+          );
+        },
+        
+      ).catch(
+        (error) => {
+          res.status(500).json({
+            error: error
+          });
+        }
+      );
+      
 });
          
 
