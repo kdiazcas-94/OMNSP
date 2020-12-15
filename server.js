@@ -127,6 +127,8 @@ app.post('/submitRegister', function(req, res) {
                     password: req.body.password, 
                     phone: req.body.phone}); 
   
+
+                    
          db.collection('users').insertOne(Users, function(err, collection){
              if(err) throw err
              
@@ -135,6 +137,14 @@ app.post('/submitRegister', function(req, res) {
          });
          return res.redirect('http://localhost:3000/'); 
         
+});
+
+app.post('/login', function(req,res){
+
+    if(!req.body.username)
+    {
+        console.log("")
+    }
 });
          
 
