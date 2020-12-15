@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const router = express.Router(); 
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+var session = require('express-session');
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy
 var bodyParser = require('body-parser');
@@ -10,7 +11,6 @@ const cors = require("cors");
 
 mongoose.connect('mongodb://localhost:27017/auth_demoapp3', {useNewUrlParser:true, useUnifiedTopology: true})
 const db = mongoose.connection
-
 
 db.on('error', (err) => {
     console.log(err)
@@ -22,11 +22,12 @@ db.once('open', () => {
 
 const app = express()
 
+
+app.use(passport.initialize());
+app.use(passport.session());
 var corsOptions = {
     origin: "http://localhost:3000"
 };
-
-
 
 //app.use(morgan('dev'))
 app.use(cors(corsOptions));
@@ -43,10 +44,6 @@ app.listen(PORT, ()=>{
 })
 
 //ROUTES to implement pages/scripts/images/components from another folder, utilize syntax to the left and below
-
-
-
-
 
   app.get('/src/components/modal/registerButton.js',(req,res) =>{
     res.sendFile(__dirname + "/src/components/modal/registerModal.js");
@@ -99,7 +96,7 @@ app.post('/submitRegister', function(req, res) {
         }
       );
     
- 
+        
          return res.redirect('http://localhost:3000/'); 
         
 });
@@ -120,13 +117,14 @@ app.post('/login', function(req,res){
                   error: new Error('Incorrect password!')
                 });
               }
-              
+              req.session.user=user
               const token = jwt.sign(
                 { userId: user._id },
                 'RANDOM_TOKEN_SECRET',
                 { expiresIn: '24h' });
                 
               res.status(200).json({
+                 
                 userId: user._id,
                 token: token
               });
@@ -147,7 +145,7 @@ app.post('/login', function(req,res){
           });
         }
       );
-      
+      return res.redirect('http://localhost:3000/'); 
 });
          
 

@@ -25,7 +25,7 @@ class RegisterButton extends React.Component {
     return (
       <div className="registerButtonField">
         <Button className="registerButton" variant="contained"  color="primary" onClick={this.showModal}>
-          Click to Register your account!
+          Register Here!
         </Button>
         <Modal show={this.state.show} handleClose={this.hideModal} header={this.state.header} footer={this.state.footer} />
       </div>
