@@ -1,6 +1,6 @@
   body,
   html {
-    min-height: 100vh;
+    height: calc(100% - 60px);
     background-color: #24292e;
     display: block;
     justify-content: center;
@@ -8,7 +8,6 @@
   .containerMain {
     text-align: center;
     padding-bottom: 2.5rem;
-    
   }
 
   a {
@@ -32,11 +31,13 @@
   } */
   
   .loginButtonField {
-    padding: 10px
+    padding: 10px;
+    width: 20%;
   }
 
   .registerButtonField {
-    padding: 10px
+    padding: 10px;
+    width: 20%
   }
 
   /* Main Pages screen size */
@@ -53,13 +54,13 @@
   }
 
   .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 2.5rem;
+    color: white
   }
 
-/* Main Pages screen size end */
 .google-map{
   height: 50%;
   width: 80%;
@@ -67,7 +68,6 @@
   padding: 20px 150px;
 }
 
-/* Class */
   .navBar {
     padding: 0 40px;
     width: 100%;
@@ -91,7 +91,6 @@
 
   /* Media screen size */
   @media screen and (min-width: 768px) {
-  
     .links {
         height: auto;
         display: flex;
@@ -180,7 +179,7 @@
 }
 
 .homeWrapper {
-  height: 600px;
+  height: 100%;
   max-width: 100%;
   justify-content: center;
   margin-left: auto;
@@ -197,7 +196,6 @@
   height: auto;
   overflow: hidden;
   position: relative;
-  float: left;
   display: inline-block;
 }
 .bigPic{
@@ -316,7 +314,6 @@ transform: scale(1.1);
     flex-wrap: wrap;
     
 }
-
 
 .container a:hover
 {
