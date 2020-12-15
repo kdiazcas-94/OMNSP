@@ -122,13 +122,11 @@ db.collection('users').insertOne(user,function(err, collection){
 app.post('/submitRegister', function(req, res) { 
       
     
-    Users=new User({email: req.body.email, 
-                    username : req.body.username, 
+    Users=new User({name : req.body.name, 
+                    email: req.body.email, 
                     password: req.body.password, 
                     phone: req.body.phone}); 
-  
-
-                    
+  //dont ask for password in above object, in order to validate password using passport?
          db.collection('users').insertOne(Users, function(err, collection){
              if(err) throw err
              
