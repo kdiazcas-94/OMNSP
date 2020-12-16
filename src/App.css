@@ -58,7 +58,6 @@
     bottom: 0;
     width: 100%;
     height: 2.5rem;
-    color: white
   }
 
 .google-map{
@@ -372,4 +371,29 @@ transform: scale(1.1);
   overflow: hidden;
   display: flex;
   flex-direction: row;
+}
+
+.MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-Color: white;
+
+}
+.avatar {
+  background-color: primary,
+}
+
+.form {
+  width: 100%;
+  background-Color: white;
+  color: black
+}
+.submit {
+  margin: 20px;
 }

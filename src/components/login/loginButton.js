@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../modal/loginModal';
+import Modal from '../modal/loginModalNew';
 import {Button} from '@material-ui/core'
 
 class LoginButton extends React.Component {

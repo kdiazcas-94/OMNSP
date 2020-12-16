@@ -12,6 +12,7 @@ import StickyFooter from './components/Footer/StickyFooter'
 import MyProfile from "./pages/profile/MyProfile"
 import myGroups from "./pages/groups/myGroups"
 import myTopics from "./pages/topics/myTopics"
+import SignIn from "./pages/SignIn"
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
                   <Route exact path='/Profile-Page' component={MyProfile}/>
                   <Route exact path='/My-Groups' component={myGroups}/>\
                   <Route exact path='/My-Topics' component={myTopics}/>
+                  <Route exact path='/Sign-In' component={SignIn}/>
                   <Route exact path='*' component={ErrorComp}/>
                 </Switch>
                 <StickyFooter />

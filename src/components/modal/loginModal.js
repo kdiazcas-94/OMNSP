@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
+
 export default class LoginModal extends Component {
 
     constructor(props) {
