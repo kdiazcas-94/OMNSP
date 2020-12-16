@@ -48,9 +48,7 @@ export default class LoginModal extends Component {
                         <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />    
                       </form>
                       </p> 
-                     </div>
-                     <div className="modal-footer"><h3>{footer}</h3>
-                     </div>               
+                     </div>             
                      </div>
  
             </div>

@@ -40,9 +40,9 @@ export default class LoginModal extends Component {
                   <h2>{header}</h2>
                 </div>
                 <div className="modal-body">
+                <div className="form">
                 <div className="paper">
                 <Container component="main" maxWidth="xs">
-                  <form className="form" noValidate action="http://localhost:3003/login" method="POST">
                     <TextField
                       variant="outlined"
                       margin="normal"
@@ -76,9 +76,12 @@ export default class LoginModal extends Component {
                       fullWidth
                       variant="contained"
                       color="primary"
+                      className="close" 
+                      onClick={handleClose}
                       >
                         Cancel
                     </Button>
+                    <form className="form" noValidate action="http://localhost:3003/login" method="POST">
                     <Button
                       type="submit"
                       fullWidth
@@ -89,6 +92,7 @@ export default class LoginModal extends Component {
                     >
                       Sign In
                     </Button>
+                    </form>
                     <Grid container>
                       <Grid item xs>
                         <Link href="#" variant="body2">
@@ -101,12 +105,11 @@ export default class LoginModal extends Component {
                         </Link>
                       </Grid>
                     </Grid>
-                  </form>
+                  
                 </Container>
                 </div>
                 </div>
-                <div className="modal-footer"><h3>{footer}</h3>
-                </div>               
+                </div>             
                 </div>
             </div>
  

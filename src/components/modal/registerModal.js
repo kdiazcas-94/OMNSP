@@ -51,7 +51,6 @@ export default class RegisterModal extends Component {
                      <div className="modal-footer"><h3>{footer}</h3>
                      </div>               
                      </div>
- 
             </div>
  
         </div>

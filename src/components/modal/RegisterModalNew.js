@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
+
 import Container from '@material-ui/core/Container';
 
 
@@ -42,8 +43,8 @@ export default class RegisterModal extends Component {
                 </div>
                 <div className="modal-body">
                 <Container component="main" maxWidth="xs">
+                <div className="form">
                     <div className="paper">
-                        <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
                             <TextField
                                 autoComplete="name"
                                 name="exampleInputName"
@@ -97,28 +98,38 @@ export default class RegisterModal extends Component {
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, marketing promotions and updates via email."
                             />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className="submit"
-                        >
+                            <Button
+                                type="cancel"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className="close" 
+                                onClick={handleClose}
+                                >
+                             Cancel
+                            </Button>
+                            <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className="submit"
+                            >
                             Sign Up
-                        </Button>
-                        <Grid container justify="flex-end">
-                            <Grid item>
-                            <Link href="#" variant="body2">
-                                Already have an account? Sign in
-                            </Link>
+                            </Button>
+                            </form>
+                            <Grid container justify="flex-end">
+                                <Grid item>
+                                    <Link href="#" variant="body2">
+                                        Already have an account? Sign in
+                                    </Link>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        </form>
                     </div>
+                    </div> 
     </Container>
-                     </div>
-                     <div className="modal-footer"><h3>{footer}</h3>
-                     </div>               
+                     </div>            
                      </div>
 
 
