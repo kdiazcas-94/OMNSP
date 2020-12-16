@@ -43,8 +43,11 @@ export default class RegisterModal extends Component {
                 </div>
                 <div className="modal-body">
                 <Container component="main" maxWidth="xs">
+                    
                 <div className="form">
+                    
                     <div className="paper">
+                    <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
                             <TextField
                                 autoComplete="name"
                                 name="exampleInputName"
@@ -94,6 +97,16 @@ export default class RegisterModal extends Component {
                                 autoComplete="current-password"
                                 for="exampleInputPassword3"
                             />
+                               <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className="submit"
+                            >
+                            Sign Up
+                            </Button>
+                            </form>
                             <FormControlLabel
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, marketing promotions and updates via email."
@@ -108,17 +121,9 @@ export default class RegisterModal extends Component {
                                 >
                              Cancel
                             </Button>
-                            <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                className="submit"
-                            >
-                            Sign Up
-                            </Button>
-                            </form>
+                            
+                         
+                            
                             <Grid container justify="flex-end">
                                 <Grid item>
                                     <Link href="#" variant="body2">
