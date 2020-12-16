@@ -1,5 +1,7 @@
 import React, { Component }  from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
+import {Button} from '@material-ui/core'
+import Container from '@material-ui/core/Container';
 
 export default class LoginModal extends Component {
 
@@ -33,21 +35,53 @@ export default class LoginModal extends Component {
                   <h2>{header}</h2>
                 </div>
                 <div className="modal-body">
-                    <p>
-                      <form action="http://localhost:3003/login" method="POST">
-                      <label className="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" className="formSize" id="exampleInputEmail3" placeholder="Enter email" onChange={this.myChangeHandler}></input>
-                        <hr />
-                        <label className="sr-only" for="exampleInputPassword3">Password</label>
-                        <input type="password" className="formSize" id="exampleInputPassword3" placeholder="Password"></input>
-                        <hr />
-                        <input className="form-check-input" type="checkbox"></input>
-                        <label className="form-check-label"> Remember me</label>
-                        <hr />
-                        <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                        <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />    
+                      <form className="form-layer" action="http://localhost:3003/login" method="POST">
+                      <label 
+                        className="sr-only" 
+                        for="exampleInputEmail3">
+                        Email address
+                      </label>
+                        <input 
+                          type="email" 
+                          className="formSize" 
+                          id="exampleInputEmail3" 
+                          placeholder="Enter email" 
+                          onChange={this.myChangeHandler} />
+                      <hr />
+                      <label 
+                        className="sr-only" 
+                        for="exampleInputPassword3">
+                          Password
+                        </label>
+                        <input 
+                          type="password" 
+                          className="formSize" 
+                          id="exampleInputPassword3" 
+                          placeholder="Password" />
+                      <hr />
+                      <Container>
+                      <input 
+                        className="form-check-input" 
+                        type="checkbox" />
+                      <label 
+                          className="form-check-label"> Remember me</label>
+                      </Container>
+                      <hr />
+                        <Button 
+                          variant="contained" 
+                          type="button" 
+                          className="btn btn-secondary btn-sm ml-auto" 
+                          data-dismiss="modal">
+                          Cancel
+                        </Button>
+                        <Button 
+                          variant="contained" 
+                          type="submit" 
+                          className="btn btn-secondary btn-sm ml-auto" 
+                          value="Submit">
+                          Submit
+                        </Button>
                       </form>
-                      </p> 
                      </div>             
                      </div>
  
@@ -57,3 +91,4 @@ export default class LoginModal extends Component {
       );
     }    
 }
+//<input type="submit" id="submitDetails" name="submitDetails" value="Submit" />  

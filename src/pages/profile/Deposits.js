@@ -18,7 +18,7 @@ export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title color="red">Recent Activity</Title>
+      <Title color>Recent Activity</Title>
       <Typography component="p" variant="h4">
         Last Week
       </Typography>

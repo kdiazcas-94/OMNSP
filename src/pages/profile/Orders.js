@@ -39,7 +39,7 @@ export default function Orders() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell  color='white'>Join Date</TableCell>
+            <TableCell>Join Date</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>School Location</TableCell>
             <TableCell>Address</TableCell>

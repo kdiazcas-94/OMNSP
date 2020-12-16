@@ -7,7 +7,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import Modal from '../../components/modal/TopicModal'
+import useModal from '../../components/modal/useModal';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Album() {
   const classes = useStyles();
-
+  const {isShowing, toggle} = useModal();
   return (
     <React.Fragment>
       <AppBar position="relative">
@@ -53,6 +54,28 @@ export default function Album() {
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom marginTop="sm">
+              My Topic Name
+            </Typography>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Insert information of the topic
+            </Typography>
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary" onClick={toggle}>Read More</Button>
+                  <Modal
+                    isShowing={isShowing}
+                    hide={toggle}
+                  />
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
+          <br />
+          <hr />
+          <br />
+          <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               My Topic Name
             </Typography>
@@ -62,40 +85,61 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Read More
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="secondary">
-                    Request Information
-                  </Button>
+                  <Button variant="contained" color="primary" onClick={toggle}>Read More</Button>
+                  <Modal
+                    isShowing={isShowing}
+                    hide={toggle}
+                  />
                 </Grid>
               </Grid>
             </div>
           </Container>
+          <br />
+          <hr />
+          <br />
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               My Topic Name
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-            Insert information of the topic
+              Insert information of the topic
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Read More
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="secondary">
-                    Request Information
-                  </Button>
+                  <Button variant="contained" color="primary" onClick={toggle}>Read More</Button>
+                  <Modal
+                    isShowing={isShowing}
+                    hide={toggle}
+                  />
                 </Grid>
               </Grid>
             </div>
           </Container>
+          <br />
+          <hr />
+          <br />
+          <Container maxWidth="sm">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              My Topic Name
+            </Typography>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Insert information of the topic
+            </Typography>
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary" onClick={toggle}>Read More</Button>
+                  <Modal
+                    isShowing={isShowing}
+                    hide={toggle}
+                  />
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
+
+          
           
         </div>
       </main>

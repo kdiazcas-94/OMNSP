@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../modal/RegisterModalNew';
+import Modal from '../modal/registerModal';
 import {Button} from '@material-ui/core'
 
 

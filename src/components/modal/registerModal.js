@@ -1,4 +1,6 @@
 import React, { Component }  from 'react';
+import {Button} from '@material-ui/core'
+
 export default class RegisterModal extends Component {
  
     constructor(props) {
@@ -31,22 +33,65 @@ export default class RegisterModal extends Component {
                   <h2>{header}</h2>
                 </div>
                 <div className="modal-body">
-                      <form action="http://localhost:3003/submitRegister" method="POST">
-                      <label className="sr-only" for="exampleInputName">Name</label>
-                        <input className="box" type="text" name="name" id="name"  placeholder="Name"  required />
+                  <form className="form-layer" action="http://localhost:3003/submitRegister" method="POST">
+                    <label 
+                      className="sr-only" 
+                      for="exampleInputName">
+                        Name
+                    </label>
+                      <input 
+                        className="box" 
+                        type="text" 
+                        name="name" 
+                        id="name"  
+                        placeholder="Name"  
+                        required />
                         <hr />
-                      <label className="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" name="email" className="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email"></input>
+                    <label 
+                      className="sr-only" 
+                      for="exampleInputEmail3">
+                        Email address
+                    </label>
+                      <input 
+                        type="email" 
+                        name="email" 
+                        className="form-control form-control-sm mr-1" 
+                        id="exampleInputEmail3" placeholder="Enter email" />
                         <hr />
-                      <label className="sr-only" for="exampleInputPassword3">Password</label>
-                        <input type="password" name="password" className="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password"></input>
-                        <hr />
-                      <label className="sr-only" for="exampleInputPhoneNumber">Phone Number</label>
-                      <input className="box" type="text" name="phone" id="phone"   placeholder="Phone Number " required/>
+                    <label className="sr-only" for="exampleInputPassword3">Password</label>
+                      <input 
+                        type="password" 
+                        name="password" 
+                        className="form-control form-control-sm mr-1" 
+                        id="exampleInputPassword3" placeholder="Password" />
                       <hr />
-                      <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                      <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />
-                      </form>
+                    <label 
+                      className="sr-only" 
+                      for="exampleInputPhoneNumber">
+                       Phone Number
+                    </label>
+                      <input
+                        className="box" 
+                        type="text" 
+                        name="phone" 
+                        id="phone"   
+                        placeholder="Phone Number " required />
+                      <hr />
+                      <Button 
+                        variant="contained"
+                        type="button" 
+                        className="btn btn-secondary btn-sm ml-auto" 
+                        data-dismiss="modal" value="Cancel">
+                          Cancel
+                      </Button>
+                      <Button 
+                        variant="contained"
+                        type="submit" 
+                        className="btn btn-secondary btn-sm ml-auto" 
+                        value="Submit">
+                        Submit
+                      </Button>
+                  </form>
                      </div>
                      <div className="modal-footer"><h3>{footer}</h3>
                      </div>               
