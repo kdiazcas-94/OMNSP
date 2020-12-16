@@ -45,6 +45,7 @@ export default class RegisterModal extends Component {
                 <Container component="main" maxWidth="xs">
                 <div className="form">
                     <div className="paper">
+                    <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
                             <TextField
                                 autoComplete="name"
                                 name="exampleInputName"
@@ -98,8 +99,19 @@ export default class RegisterModal extends Component {
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, marketing promotions and updates via email."
                             />
+                                                        <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className="submit"
+                            >
+                            Sign Up
+                            </Button>
+                            </form>
                             <Button
                                 type="cancel"
+                                margin="normal"
                                 fullWidth
                                 variant="contained"
                                 color="primary"
@@ -109,15 +121,6 @@ export default class RegisterModal extends Component {
                              Cancel
                             </Button>
                             <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                className="submit"
-                            >
-                            Sign Up
-                            </Button>
                             </form>
                             <Grid container justify="flex-end">
                                 <Grid item>
@@ -128,7 +131,7 @@ export default class RegisterModal extends Component {
                             </Grid>
                     </div>
                     </div> 
-    </Container>
+                    </Container>
                      </div>            
                      </div>
 
