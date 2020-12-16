@@ -111,8 +111,19 @@ export default class RegisterModal extends Component {
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, marketing promotions and updates via email."
                             />
+                                                        <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className="submit"
+                            >
+                            Sign Up
+                            </Button>
+                            </form>
                             <Button
                                 type="cancel"
+                                margin="normal"
                                 fullWidth
                                 variant="contained"
                                 color="primary"
@@ -121,9 +132,14 @@ export default class RegisterModal extends Component {
                                 >
                              Cancel
                             </Button>
+<<<<<<< HEAD
                             
                          
                             
+=======
+                            <form className="form" noValidate action="http://localhost:3003/submitRegister" method="POST">
+                            </form>
+>>>>>>> 36359a5cba4a2c96d40dd4d061e0f4e0d9e9da34
                             <Grid container justify="flex-end">
                                 <Grid item>
                                     <Link href="#" variant="body2">
@@ -133,7 +149,7 @@ export default class RegisterModal extends Component {
                             </Grid>
                     </div>
                     </div> 
-    </Container>
+                    </Container>
                      </div>            
                      </div>
 
