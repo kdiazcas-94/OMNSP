@@ -45,7 +45,7 @@ export default class LoginModal extends Component {
                         <label className="form-check-label"> Remember me</label>
                         <hr />
                         <button type="button" className="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                        <button onClick="submitLogin" value="Submit">Sign in</button>    
+                        <input type="submit" id="submitDetails" name="submitDetails" value="Submit" />    
                       </form>
                       </p> 
                      </div>
