@@ -39,7 +39,7 @@ export default function Orders() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Join Date</TableCell>
+            <TableCell  color='white'>Join Date</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>School Location</TableCell>
             <TableCell>Address</TableCell>
@@ -58,7 +58,7 @@ export default function Orders() {
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
-        <Link color="primary" href="#" onClick={preventDefault}>
+        <Link color="secondary" href="#" onClick={preventDefault}>
           See more groups
         </Link>
       </div>

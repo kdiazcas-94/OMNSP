@@ -29,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
     padding: '0 8px',
     ...theme.mixins.toolbar,
+    backgroundColor: "#444e5c",
+    color: "white",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -55,6 +57,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   drawerPaper: {
+    backgroundColor: "#444e5c",
+    color: "white",
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
@@ -89,6 +93,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'column',
+    backgroundColor: "#444e5c",
+    color: "white",
   },
   fixedHeight: {
     height: 240,
@@ -129,7 +135,6 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Chart */}
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>

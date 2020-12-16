@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#444e5c",
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
@@ -76,7 +76,7 @@ export default function Album() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" color="secondary">
                     Request Information
                   </Button>
                 </Grid>

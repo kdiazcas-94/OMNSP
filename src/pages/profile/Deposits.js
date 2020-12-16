@@ -18,7 +18,7 @@ export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Recent Activity</Title>
+      <Title color="red">Recent Activity</Title>
       <Typography component="p" variant="h4">
         Last Week
       </Typography>
@@ -26,7 +26,7 @@ export default function Deposits() {
         on 05 December, 2020
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
+        <Link color="secondary" href="#" onClick={preventDefault}>
           View Activity
         </Link>
       </div>

@@ -1,9 +1,13 @@
   body,
   html {
     height: calc(100% - 60px);
-    background-color: #24292e;
+    background-color: #333333;
     display: block;
     justify-content: center;
+  }
+
+  .root {
+
   }
   .containerMain {
     text-align: center;
@@ -42,7 +46,7 @@
 
   /* Main Pages screen size */
   .header {
-    background-color: #222b35 ;
+    background-color: #444e5c ;
     min-height: 2vh;
     display: flex;
     flex-direction: row;
