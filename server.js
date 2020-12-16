@@ -101,7 +101,7 @@ app.post('/submitRegister', function(req, res) {
         
 });
 
-app.post('/login', function(req,res){
+app.post('/login', function(req,res,next){
 
     User.findOne({ email: req.body.email }).then(
         (user) => {
@@ -119,13 +119,11 @@ app.post('/login', function(req,res){
               }
               
               const token = jwt.sign(
-                { userId: user._id },
+                { userId: user.id },
                 'RANDOM_TOKEN_SECRET',
                 { expiresIn: '24h' });
                 
               res.status(200).json({
-                 
-                userId: user._id,
                 token: token
               });
             }
